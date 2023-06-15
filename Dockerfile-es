@@ -1,0 +1,14 @@
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+
+# plugin for Japanese
+RUN bin/elasticsearch-plugin install analysis-kuromoji
+
+# plugin for Chinese
+# https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-smartcn.html
+RUN bin/elasticsearch-plugin install analysis-smartcn
+
+# plugin for Korean
+# TBD
+
+# ICU(International Components for Unicode) Analysis plugin
+RUN bin/elasticsearch-plugin install analysis-icu
